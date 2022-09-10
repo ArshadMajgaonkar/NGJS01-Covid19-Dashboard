@@ -35,7 +35,7 @@
         <input type="text" name="countryName" id="countryName" ng-model="country" ng-change="get_countryName()">
     </div>
 {{country}}
-    <!-- <div class="form-control">
+    <div class="form-control" ng-if="get_data">
         <div>
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
@@ -47,7 +47,7 @@
                   <li class="list-group-item">Deaths : {{get_data.deaths.value}}</li>
                 </ul>
               </div>
-        </div> -->
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

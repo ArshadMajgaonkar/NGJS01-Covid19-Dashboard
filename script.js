@@ -32,27 +32,34 @@ app.controller("myController",($scope,$http)=>{
 
     // console.log($scope);
 
-    // //2 way binding
+    //2 way binding
 
-    // $scope.get_countryName = ()=>{
-    //     let countr = $scope.country;
-    //     console.log(countr);
-    // };
+    $scope.get_countryName = ()=>{
+        let Country = $scope.country;
+        console.log(Country);
 
-    // //calling api for other countries
+        if(Country=='')
+        {
+            $scope.get_data=undefined;
+            return;
+        }
 
-    // $http.get(`${url}/countries/${countr}`).then((response)=>{
+        //calling api for other countries
+        $http.get(`${url}/countries/${Country}`).then((response)=>{
 
-    //     //if success
-    //     console.log(response);
+            //if success
+            console.log(response);
+    
+            $scope.get_data = response.data ;
+    
+        }, (error)=>{
+    
+            //if failed
+            console.log(error);
+        });
+    };
 
-    //     $scope.get_data = response.data ;
-
-    // }, (error)=>{
-
-    //     //if failed
-    //     console.log(error);
-    // });
+    
 
 });
 
